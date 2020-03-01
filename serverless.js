@@ -58,6 +58,9 @@ class TencentPreSCF extends Component {
     const componentList = Object.keys(newYamlData)
     for (let i = 0; i < componentList.length; i++) {
       const thisName = componentList[i]
+      if (inputs.funtionName && inputs.funtionName != thisName) {
+        continue
+      }
       const tencentSCF = await this.load('@serverless/tencent-scf', thisName)
       newYamlData[thisName]['inputs'].region = region
       const scfOutput = await tencentSCF(newYamlData[thisName]['inputs'])

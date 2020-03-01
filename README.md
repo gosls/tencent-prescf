@@ -12,7 +12,10 @@ helloWorld:
   inputs:
     yaml: ./template.yaml
     region: ap-guangzhou
+    functionName: hello_world
 ```
+
+* 注意上述中的`funtionName`是可选的，因为scfcli和vscode插件是可以单独部署某个函数的，为了实现这个功能，所以增加了hello_world，如果有这个参数，就可以单独部署老yaml中的单个函数。
 
 例如我目录结构：
 ```text
